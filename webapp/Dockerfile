@@ -14,13 +14,15 @@ COPY app /backend/app
 RUN cd /backend/app && npm install && bower install --allow-root
 
 # TODO: [S6] Install
-
+RUN curl -sSLo /tmp/s6.tar.gz https://github.com/just-containers/s6-overlay/releases/download/v1.17.2.0/s6-overlay-amd64.tar.gz \
+  && tar xzf /tmp/s6.tar.gz -C / \
+  && rm -f /tmp/s6.tar.gz
 # TODO: [Serf] Install
 
 # TODO: [S6] Replace the two following instructions
 # Copy the starting script and make it executable
-COPY scripts /scripts/
-RUN chmod +x /scripts/*.sh
+COPY services/node /etc/services.d/node
+RUN chmod +x /etc/services.d/node/run
 
 # TODO: [Serf] Add Serf S6 setup
 
@@ -37,4 +39,5 @@ ENV ROLE backend
 
 # TODO: [S6] Replace the following instruction
 # Command executed when the container starts
-CMD [ "/scripts/run.sh" ]
+#CMD [ "/scripts/run.sh" ]
+ENTRYPOINT ["/init"]

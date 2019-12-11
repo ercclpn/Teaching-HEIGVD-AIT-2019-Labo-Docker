@@ -12,12 +12,43 @@ Date : 04.12.2019
    when deploying it in a production environment?
 
     Non l'environnement actuel ne répond pas à l'évolutivité et non résilient à la panne car il n'y a que 1 seul load-balancer qui est le noeud critique de l'environnement. De plus, il n'est pour l'instant pas possible de facilement ajouter ou enlever un noeud au pool d'application.
-    
+
 2. <a name="M2"></a>**[M2]** Describe what you need to do to add new
    `webapp` container to the infrastructure. Give the exact steps of
    what you have to do without modifiying the way the things are
    done. Hint: You probably have to modify some configuration and
    script files in a Docker image.
+
+   Pour ajouter un nouveau noeud en l'état actuel, il faut : 
+    - Ajouter dans le docker-compose.yml 
+  
+    ```docker
+    webapp3:
+        container_name: ${WEBAPP_3_NAME}
+        build:
+            context: ./webapp
+            dockerfile: Dockerfile
+        networks:
+            heig:
+            ipv4_address: ${WEBAPP_3_IP}
+        ports:
+            - "4002:3000"
+        environment:
+                - TAG=${WEBAPP_3_NAME}
+                - SERVER_IP=${WEBAPP_3_IP}
+    ```
+
+ - Redéfinir les variables globales pour qu'elles correspondent dans .env
+
+    ```bash
+    WEBAPP_3_NAME=s3
+    WEBAPP_3_IP=192.168.42.33
+    ```
+- Ajouter dans le ficher de conf haproxy.cfg :
+```bash
+ server s3 ${WEBAPP_3_IP}:3000 check
+```
+
 
 3. <a name="M3"></a>**[M3]** Based on your previous answers, you have
    detected some issues in the current solution. Now propose a better
@@ -59,6 +90,17 @@ Date : 04.12.2019
    What happens if we add more web server nodes? Do you think it is
    really dynamic? It's far away from being a dynamic
    configuration. Can you propose a solution to solve this?
+
+
+   
+**Deliverables**:
+
+1. Take a screenshot of the stats page of HAProxy at
+   <http://192.168.42.42:1936>. You should see your backend nodes.
+
+   ![image](assets/img/task0_q1.png)
+
+2. Give the URL of your repository URL in the lab report.
 
 # Task 1
 
