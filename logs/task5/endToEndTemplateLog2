@@ -1,3 +1,4 @@
+root@0f3b7bfde95b:/# cat /usr/local/etc/haproxy/haproxy.cfg 
 # Global configuration for HAProxy
 # http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#3
 global
@@ -106,11 +107,14 @@ backend nodes
 
     # Define the list of nodes to be in the balancing mechanism
     # http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#4-server
-    {{#each addresses}}
-	server {{ host }} {{ ip }}:3000 check
-    {{/each}}
+    
+	server 117d8164328a 192.168.42.22:3000 check
+    
+	server 848b5809ca54 192.168.42.11:3000 check
+    
 
 # Other links you will need later for this lab
 #
 # About cookies: http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#4-cookie
 #
+
