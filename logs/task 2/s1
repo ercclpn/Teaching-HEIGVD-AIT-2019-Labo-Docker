@@ -1,0 +1,120 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+/opt/bin/serf agent --join ha --tag role=backend
+==> Starting Serf agent...
+==> Starting Serf agent RPC...
+==> Serf agent running!
+         Node name: '5944e8f7d366'
+         Bind addr: '0.0.0.0:7946'
+          RPC addr: '127.0.0.1:7373'
+         Encrypted: false
+          Snapshot: false
+           Profile: lan
+==> Joining cluster...(replay: false)
+Application started
+[0mHEAD / [32m200 [0m16.449 ms - 114[0m
+    Join completed. Synced with 1 initial agents
+
+==> Log data will now stream in as it occurs:
+
+    2019/12/27 12:06:43 [INFO] agent: Serf agent starting
+    2019/12/27 12:06:43 [INFO] serf: EventMemberJoin: 5944e8f7d366 192.168.42.11
+    2019/12/27 12:06:43 [INFO] agent: joining: [ha] replay: false
+    2019/12/27 12:06:44 [INFO] agent: Received event: member-join
+    2019/12/27 12:06:45 [INFO] serf: EventMemberJoin: e9bd5c535285 192.168.42.22
+    2019/12/27 12:06:45 [INFO] serf: EventMemberJoin: b6cf55fd169b 192.168.42.42
+    2019/12/27 12:06:45 [INFO] agent: joined: 1 nodes
+    2019/12/27 12:06:46 [INFO] agent: Received event: member-join
+[0mHEAD / [32m200 [0m1.229 ms - 114[0m
+[0mHEAD / [32m200 [0m0.900 ms - 114[0m
+[0mHEAD / [32m200 [0m0.753 ms - 114[0m
+[0mHEAD / [32m200 [0m1.494 ms - 114[0m
+[0mHEAD / [32m200 [0m2.984 ms - 114[0m
+[0mHEAD / [32m200 [0m1.430 ms - 114[0m
+[0mHEAD / [32m200 [0m2.399 ms - 114[0m
+[0mHEAD / [32m200 [0m2.672 ms - 114[0m
+[0mHEAD / [32m200 [0m2.459 ms - 114[0m
+[0mHEAD / [32m200 [0m1.263 ms - 114[0m
+[0mHEAD / [32m200 [0m2.513 ms - 114[0m
+[0mHEAD / [32m200 [0m2.059 ms - 114[0m
+[0mHEAD / [32m200 [0m2.066 ms - 114[0m
+[0mHEAD / [32m200 [0m2.127 ms - 114[0m
+[0mHEAD / [32m200 [0m2.081 ms - 114[0m
+[0mHEAD / [32m200 [0m2.524 ms - 114[0m
+[0mHEAD / [32m200 [0m2.355 ms - 114[0m
+[0mHEAD / [32m200 [0m2.319 ms - 114[0m
+[0mHEAD / [32m200 [0m1.842 ms - 114[0m
+[0mHEAD / [32m200 [0m0.751 ms - 114[0m
+[0mHEAD / [32m200 [0m2.143 ms - 114[0m
+[0mHEAD / [32m200 [0m6.281 ms - 114[0m
+[0mHEAD / [32m200 [0m2.311 ms - 114[0m
+[0mHEAD / [32m200 [0m2.499 ms - 114[0m
+[0mHEAD / [32m200 [0m0.732 ms - 114[0m
+[0mHEAD / [32m200 [0m0.915 ms - 114[0m
+[0mHEAD / [32m200 [0m2.295 ms - 114[0m
+[0mHEAD / [32m200 [0m3.407 ms - 114[0m
+[0mHEAD / [32m200 [0m2.139 ms - 114[0m
+[0mHEAD / [32m200 [0m0.569 ms - 114[0m
+[0mHEAD / [32m200 [0m2.100 ms - 114[0m
+[0mHEAD / [32m200 [0m2.419 ms - 114[0m
+[0mHEAD / [32m200 [0m0.784 ms - 114[0m
+[0mHEAD / [32m200 [0m0.894 ms - 114[0m
+[0mHEAD / [32m200 [0m1.943 ms - 114[0m
+[0mHEAD / [32m200 [0m2.429 ms - 114[0m
+[0mHEAD / [32m200 [0m0.659 ms - 114[0m
+[0mHEAD / [32m200 [0m2.242 ms - 114[0m
+[0mHEAD / [32m200 [0m2.535 ms - 114[0m
+[0mHEAD / [32m200 [0m0.674 ms - 114[0m
+[0mHEAD / [32m200 [0m1.008 ms - 114[0m
+[0mHEAD / [32m200 [0m2.744 ms - 114[0m
+[0mHEAD / [32m200 [0m2.096 ms - 114[0m
+[0mHEAD / [32m200 [0m2.103 ms - 114[0m
+[0mHEAD / [32m200 [0m1.969 ms - 114[0m
+[0mHEAD / [32m200 [0m0.765 ms - 114[0m
+[0mHEAD / [32m200 [0m2.508 ms - 114[0m
+[0mHEAD / [32m200 [0m1.943 ms - 114[0m
+[0mHEAD / [32m200 [0m0.642 ms - 114[0m
+[0mHEAD / [32m200 [0m2.054 ms - 114[0m
+[0mHEAD / [32m200 [0m2.675 ms - 114[0m
+[0mHEAD / [32m200 [0m2.723 ms - 114[0m
+[0mHEAD / [32m200 [0m0.646 ms - 114[0m
+[0mHEAD / [32m200 [0m0.821 ms - 114[0m
+[0mHEAD / [32m200 [0m0.983 ms - 114[0m
+[0mHEAD / [32m200 [0m1.663 ms - 114[0m
+[0mHEAD / [32m200 [0m0.598 ms - 114[0m
+[0mHEAD / [32m200 [0m1.009 ms - 114[0m
+[0mHEAD / [32m200 [0m2.012 ms - 114[0m
+[0mHEAD / [32m200 [0m0.844 ms - 114[0m
+[0mHEAD / [32m200 [0m1.877 ms - 114[0m
+[0mHEAD / [32m200 [0m2.003 ms - 114[0m
+[0mHEAD / [32m200 [0m1.909 ms - 114[0m
+[0mHEAD / [32m200 [0m1.856 ms - 114[0m
+[0mHEAD / [32m200 [0m1.149 ms - 114[0m
+[0mHEAD / [32m200 [0m2.038 ms - 114[0m
+[0mHEAD / [32m200 [0m5.193 ms - 114[0m
+[0mHEAD / [32m200 [0m2.157 ms - 114[0m
+[0mHEAD / [32m200 [0m1.465 ms - 114[0m
+[0mHEAD / [32m200 [0m2.355 ms - 114[0m
+[0mHEAD / [32m200 [0m2.409 ms - 114[0m
+[0mHEAD / [32m200 [0m1.842 ms - 114[0m
+[0mHEAD / [32m200 [0m1.980 ms - 114[0m
+[0mHEAD / [32m200 [0m0.989 ms - 114[0m
+[0mHEAD / [32m200 [0m0.881 ms - 114[0m
+[0mHEAD / [32m200 [0m1.840 ms - 114[0m
+[0mHEAD / [32m200 [0m2.089 ms - 114[0m
+[0mHEAD / [32m200 [0m1.854 ms - 114[0m
+[0mHEAD / [32m200 [0m1.732 ms - 114[0m
+[0mHEAD / [32m200 [0m1.746 ms - 114[0m
+[0mHEAD / [32m200 [0m1.995 ms - 114[0m
+[0mHEAD / [32m200 [0m1.803 ms - 114[0m
+[0mHEAD / [32m200 [0m2.112 ms - 114[0m
+[0mHEAD / [32m200 [0m1.878 ms - 114[0m
+[0mHEAD / [32m200 [0m1.964 ms - 114[0m
+[0mHEAD / [32m200 [0m2.276 ms - 114[0m
+[0mHEAD / [32m200 [0m3.082 ms - 114[0m
