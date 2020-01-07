@@ -25,34 +25,7 @@ sur Docker et son fonctionnement interne, ainsi que sur la haute disponibilité 
    done. Hint: You probably have to modify some configuration and
    script files in a Docker image.
    
-   Pour ajouter un nouveau noeud en l'état actuel, il faut : 
-- Ajouter dans le docker-compose.yml 
-```
-  webapp3:
-       container_name: ${WEBAPP_3_NAME}
-       build:
-         context: ./webapp
-         dockerfile: Dockerfile
-       networks:
-         heig:
-           ipv4_address: ${WEBAPP_3_IP}
-       ports:
-         - "4002:3000"
-       environment:
-            - TAG=${WEBAPP_3_NAME}
-            - SERVER_IP=${WEBAPP_3_IP}
- - Redéfinir les variables globales pour qu'elles correspondent dans .env
-WEBAPP_3_NAME=s3
-WEBAPP_3_IP=192.168.42.33
-```
-
-- Ajouter dans le ficher de conf haproxy.cfg :
- server s3 ${WEBAPP_3_IP}:3000 check
-
-- Ajouter dans le fichier de conf run.sh dans ha/scripts
-sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg
-
-   Pour ajouter un nouveau noeud en l'état actuel, il faut : 
+      Pour ajouter un nouveau noeud en l'état actuel, il faut : 
     - Ajouter dans le docker-compose.yml 
   
     ```docker
@@ -77,10 +50,16 @@ sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg
     WEBAPP_3_NAME=s3
     WEBAPP_3_IP=192.168.42.33
     ```
+
 - Ajouter dans le ficher de conf haproxy.cfg :
 ```bash
  server s3 ${WEBAPP_3_IP}:3000 check
 ```
+
+- Ajouter dans le fichier de conf run.sh dans ha/scripts
+sed -i 's/<s3>/$S3_PORT_3000_TCP_ADDR/g' /usr/local/etc/haproxy/haproxy.cfg
+
+
 
 
 3. <a name="M3"></a>**[M3]** Based on your previous answers, you have
