@@ -227,7 +227,7 @@ Réponse : tout est dans le dossier `logs`
 
     Based on the three output files you have collected, what can you say about the way we generate it? What is the problem if any?
 
-Réponse : Je ne sais pas. 
+Réponse : Il y a des lacunes au niveau du load balancer, il est préférable d'utilisé des services qui gère de manière plus simple et efficace la façon de générer dynamiquement les configurations (traefik par exemple).
 
 
 # Task 5
