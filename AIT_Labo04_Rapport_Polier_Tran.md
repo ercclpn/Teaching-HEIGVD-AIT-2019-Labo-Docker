@@ -1,7 +1,7 @@
 # Lab 04 - Docker
 
 Auteurs : Polier Florian, Tran Eric     
-Date : 04.12.2019
+Date : 08.12.2019    
 Repo : https://github.com/ercclpn/Teaching-HEIGVD-AIT-2019-Labo-Docker
 
 # Introduction
